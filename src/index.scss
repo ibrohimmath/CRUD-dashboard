@@ -1,0 +1,49 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+// Variables
+$primaryFont: "Montserrat", sans-serif;
+$secondaryFont: "Poppins", sans-serif;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+.hidden {
+  display: none;
+}
+
+html {
+  font-size: 16px;
+  @media (max-width: 1024px) {
+    font-size: 14px;
+  }
+  @media (max-width: 720px) {
+    font-size: 12px;
+  }
+  @media (max-width: 480) {
+    font-size: 10px;
+  }
+}
+
+input {
+  margin-top: 0.5rem;
+  width: 100% !important;
+  outline: none;
+  border: 1px solid rgb(167, 166, 166);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
