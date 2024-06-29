@@ -1,0 +1,27 @@
+@import "../../index.scss";
+
+.button {
+  border-radius: 8px;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: $secondaryFont;
+  cursor: pointer;
+  transition-duration: 500ms;
+  &:hover {
+    box-shadow: 0 5px 10px 0 rgb(165, 163, 163);
+  }
+
+  &.button--primary {
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+  }
+  &.button--secondary {
+    border: none;
+    background-color: rgb(10, 101, 205);
+    color: #fff;
+  }
+}
