@@ -1,39 +1,56 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "@/context/AuthProvider";
+import { ProductsProvider } from "../context/ProductsContext";
 import ProtectedRoute from "./protectedRoute";
 import Login from "@/components/Login";
 import Dashboard from "@/pages/dashboard";
 import ProductsPage from "../pages/products";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Login />,
-  },
-  {
-    path: "/home",
-    element: (
-      <ProtectedRoute>
-        <Dashboard />
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: "/products",
-    element: (
-      <ProtectedRoute>
-        <ProductsPage />
-      </ProtectedRoute>
-    ),
-  },
-]);
+import ProductAddPage from "../pages/productsAdd";
+import ProductUpdatePage from "../pages/productsUpdate";
 
 function Router() {
   return (
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <BrowserRouter>
+      <AuthProvider>
+        <ProductsProvider>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route
+              path="/home"
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/products"
+              element={
+                <ProtectedRoute>
+                  <ProductsPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/products/add"
+              element={
+                <ProtectedRoute>
+                  <ProductAddPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/products/update/:id"
+              element={
+                <ProtectedRoute>
+                  <ProductUpdatePage />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </ProductsProvider>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 

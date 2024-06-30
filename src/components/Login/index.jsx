@@ -32,6 +32,9 @@ function Login() {
   };
 
   const navigate = useNavigate();
+  if (user) {
+    navigate("/home");
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,9 +45,9 @@ function Login() {
         url: "https://fakestoreapi.com/auth/login",
         data: userObj,
       });
-      setUser(res.data.token);
       toast.success("You are logged in");
       setTimeout(() => {
+        setUser(res.data.token);
         navigate("/home");
       }, 2800);
     } catch (err) {

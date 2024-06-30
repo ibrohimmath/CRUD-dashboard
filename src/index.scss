@@ -9,6 +9,7 @@ $secondaryFont: "Poppins", sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: $primaryFont;
 }
 
 a {
@@ -48,6 +49,17 @@ input {
   font-size: 1rem;
 }
 
+select {
+  margin-top: 0.5rem;
+  width: 100% !important;
+  outline: none;
+  border: 1px solid rgb(167, 166, 166);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
 .hr {
   display: block;
   margin: 1rem 0;
@@ -57,6 +69,7 @@ input {
   color: black !important;
 }
 
+// NavLink styling
 .active {
   color: green;
 }
@@ -65,4 +78,89 @@ input {
 }
 .transitioning {
   color: yellow;
+}
+
+// react table styling
+table {
+  border-spacing: 0;
+  border: 1px solid black;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+}
+table tr th:first-of-type {
+  border-top-left-radius: 8px;
+}
+table tr th:last-of-type {
+  border-top-right-radius: 8px;
+}
+table th {
+  background-color: green;
+  color: white;
+  text-align: center;
+}
+table td {
+  border-bottom: 1px solid gray;
+  padding: 1rem;
+  text-align: center;
+}
+table tr:hover {
+  background-color: rgb(242, 242, 242);
+  color: green;
+  font-weight: 600;
+  cursor: pointer;
+  img {
+    transform: scale(1.1);
+  }
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  --s: 20px;
+
+  --_d: calc(0.353 * var(--s));
+  width: calc(var(--s) + var(--_d));
+  aspect-ratio: 1;
+  display: grid;
+  transform: scale(5);
+}
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1;
+  clip-path: polygon(
+    var(--_d) 0,
+    100% 0,
+    100% calc(100% - var(--_d)),
+    calc(100% - var(--_d)) 100%,
+    0 100%,
+    0 var(--_d)
+  );
+  background: conic-gradient(
+    from -90deg at calc(100% - var(--_d)) var(--_d),
+    #fff 135deg,
+    #666 0 270deg,
+    #aaa 0
+  );
+  animation: l6 2s infinite;
+}
+.loader:after {
+  animation-delay: -1s;
+}
+@keyframes l6 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(30px, 0);
+  }
+  50% {
+    transform: translate(30px, 30px);
+  }
+  75% {
+    transform: translate(0, 30px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }

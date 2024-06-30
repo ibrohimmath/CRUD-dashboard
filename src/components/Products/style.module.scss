@@ -1,0 +1,43 @@
+.products {
+  width: 100%;
+  color: black;
+  padding: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+.product-image-wrapper {
+  padding: 1rem;
+}
+.product-image {
+  max-height: 8rem;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+.title {
+  width: 25%;
+}
+.category {
+  width: 10%;
+}
+.image {
+  width: 20%;
+}
+.actions {
+  font-size: 1.2rem;
+}
+.update {
+  color: orange;
+  transition-duration: 500ms;
+  &:hover {
+    transform: translateY(-0.8rem);
+  }
+}
+.delete {
+  margin-left: 1rem;
+  color: red;
+  transition-duration: 500ms;
+
+  &:hover {
+    transform: translateY(-0.8rem);
+  }
+}

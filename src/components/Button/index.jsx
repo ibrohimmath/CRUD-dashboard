@@ -8,7 +8,7 @@ const Type = {
   secondary: "button--secondary",
 };
 
-function Button({ submit, type = Type.default, children, style }) {
+function Button({ submit, type = Type.default, children, style, onClick }) {
   if (submit) {
     return (
       <button
@@ -21,7 +21,11 @@ function Button({ submit, type = Type.default, children, style }) {
     );
   }
   return (
-    <button className={clsx(cn["button"], cn[type])} style={style}>
+    <button
+      className={clsx(cn["button"], cn[type])}
+      style={style}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
